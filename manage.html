@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理單字 - 背單字軟體</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 頂部導航 -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <h1 class="app-title">📚 背單字軟體</h1>
+                <a href="index.html" class="nav-link">返回學習</a>
+            </div>
+        </nav>
+
+        <!-- 主要內容區域 -->
+        <main class="manage-content">
+            <div class="manage-wrapper">
+                <!-- 新增單字表單 -->
+                <div class="form-section">
+                    <h2>新增單字</h2>
+                    <form id="addWordForm">
+                        <div class="form-group">
+                            <label for="word">英文單字 *</label>
+                            <div class="input-with-btn">
+                                <input 
+                                    type="text" 
+                                    id="word" 
+                                    placeholder="例如：serendipity"
+                                    required
+                                >
+                                <button type="button" id="autoFillBtn" class="btn btn-auto-fill">
+                                    ✨ 自動填入
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="definition">中文解釋 *</label>
+                                <textarea 
+                                    id="definition" 
+                                    placeholder="輸入單字的中文意思"
+                                    rows="3"
+                                    required
+                                ></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="partOfSpeech">詞性</label>
+                                <select id="partOfSpeech">
+                                    <option value="">--請選擇--</option>
+                                    <option value="n.">名詞 (n.)</option>
+                                    <option value="v.">動詞 (v.)</option>
+                                    <option value="adj.">形容詞 (adj.)</option>
+                                    <option value="adv.">副詞 (adv.)</option>
+                                    <option value="prep.">介詞 (prep.)</option>
+                                    <option value="conj.">連詞 (conj.)</option>
+                                    <option value="pron.">代詞 (pron.)</option>
+                                    <option value="int.">感嘆詞 (int.)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="etymology">字根分析</label>
+                            <textarea 
+                                id="etymology" 
+                                placeholder="輸入字根或詞源分析（非必需）"
+                                rows="3"
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="example">例句</label>
+                            <textarea 
+                                id="example" 
+                                placeholder="輸入例句（非必需）"
+                                rows="2"
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-submit">新增單字</button>
+                    </form>
+                </div>
+
+                <!-- 單字列表 -->
+                <div class="list-section">
+                    <h2>已新增的單字 (<span id="wordCount">0</span>)</h2>
+                    <div class="word-list" id="wordList">
+                        <p class="empty-message">還沒有新增單字，開始添加吧！</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 自動填入進度條 -->
+    <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+        <p>正在自動填入中...</p>
+    </div>
+
+    <!-- 提示消息 -->
+    <div id="notification" class="notification"></div>
+
+    <script src="manage.js"></script>
+</body>
+</html>

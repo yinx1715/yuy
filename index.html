@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背單字軟體</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 頂部導航 -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <h1 class="app-title">📚 背單字軟體</h1>
+                <a href="manage.html" class="nav-link">管理單字</a>
+            </div>
+        </nav>
+
+        <!-- 主要內容區域 -->
+        <main class="main-content">
+            <!-- 控制按鈕 -->
+            <div class="controls">
+                <button id="prevBtn" class="btn btn-prev">← 上一個</button>
+                <span id="cardCounter" class="card-counter">1 / 10</span>
+                <button id="nextBtn" class="btn btn-next">下一個 →</button>
+            </div>
+
+            <!-- 卡片容器 -->
+            <div class="card-container">
+                <div class="card" id="card">
+                    <div class="card-inner">
+                        <!-- 卡片正面 -->
+                        <div class="card-front">
+                            <div class="card-content">
+                                <p class="card-label">英文單字</p>
+                                <p class="card-word" id="frontWord">Click to start</p>
+                                <p class="card-hint">點擊翻轉查看解釋</p>
+                            </div>
+                        </div>
+                        <!-- 卡片背面 -->
+                        <div class="card-back">
+                            <div class="card-content">
+                                <p class="card-label">中文解釋</p>
+                                <p class="card-definition" id="backDefinition">-</p>
+                                <div class="card-details">
+                                    <p><strong>詞性：</strong><span id="backPartOfSpeech">-</span></p>
+                                    <p><strong>字根：</strong><span id="backEtymology">-</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 快捷鍵提示 -->
+            <div class="shortcuts">
+                <p>💡 快捷鍵：<span class="key">Space</span> 翻轉卡片 | <span class="key">←</span> / <span class="key">→</span> 上/下一個</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
